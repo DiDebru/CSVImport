@@ -1,5 +1,5 @@
 <?php
-namespace \Insasse\CSVImport\Controller;
+namespace Insasse\CSVImport\Controller;
 
 
 class Import {
@@ -23,7 +23,8 @@ class Import {
 
   public function importFromCsvFile($file) {
     $file = $this->downloadFile('');
-    if (empty($file)) {
+    $file_parts = pathinfo($file);
+    if (!$file_parts['extension'] == 'csv') {
       throw new \Magento\Framework\Exception\LocalizedException(__('Invalid file upload attempt.'));
     }
     $importProductRawData = $this->csvProcessor->getData($file);
