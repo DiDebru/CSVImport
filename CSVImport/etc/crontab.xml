@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<!--<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
-    <group id="default"> <!-- Doesn't need to be unique -->
+    <group id="default">
         <job name="csv_import" instance="Insasse\CSVImport\Controller\Import" method="importFromCsvFile">
             <schedule>* * * * *</schedule>
         </job>
     </group>
-</config>
+</config>-->
