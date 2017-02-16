@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+     <add
+        id="Insasse_CSVImport::csvimport"
+        title="CSV Import" module="Insasse_CSVImport"
+        sortOrder="51"
+        resource="Insasse_CSVImport::csvimport"
+     />
+     <add
+        id="Insasse_CSVImport::import"
+        title="Import"
+        module="Insasse_CSVImport"
+        sortOrder="10"
+        action="csvimport/import"
+        resource="Insasse_CSVImport::import"
+        parent="Insasse_CSVImport::csvimport"
+     />
+    </menu>
+</config>

@@ -1,0 +1,29 @@
+<?php /* @var $block \Insasse\CSVImport\Block\System\Config\ */ ?>
+
+<script>
+  require([
+    'jquery',
+    'prototype'
+  ], function(jQuery){
+
+    var collectSpan = jQuery('#collect_span');
+
+    jQuery('#import_button').click(function () {
+      var params = {};
+      new Ajax.Request('<?php echo $block->getAjaxUrl() ?>', {
+        parameters:     params,
+        loaderArea:     false,
+        asynchronous:   true,
+        onSuccess: function(response) {
+          var json = response.responseJSON;
+          if (typeof json.time != 'undefined') {
+            jQuery('#row_insasse_csvimport_general_importbutton_time').find('.value .time').text(json.time);
+          }
+        }
+      });
+    });
+
+  });
+</script>
+
+<?php echo $block->getButtonHtml() ?>
